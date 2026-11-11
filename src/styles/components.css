@@ -1,0 +1,212 @@
+/* ---------- Wordmark ---------- */
+.wordmark {
+  font-family: var(--f-display);
+  font-size: 1.6rem;
+  line-height: 1;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  padding-left: 0.32em; /* compensa o tracking para centrar opticamente */
+  display: inline-block;
+}
+
+/* ---------- Botões ---------- */
+.btn {
+  --btn-h: 48px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+  min-height: var(--btn-h);
+  padding: 0 0.5rem 0 1.35rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition:
+    background-color var(--dur) var(--ease-out),
+    color var(--dur) var(--ease-out),
+    border-color var(--dur) var(--ease-out);
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+.btn__icon {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  overflow: hidden;
+  transition:
+    background-color var(--dur) var(--ease-out),
+    transform var(--dur) var(--ease-out);
+}
+.btn__icon svg {
+  transition: transform var(--dur) var(--ease-out);
+}
+@media (hover: hover) {
+  .btn:hover .btn__icon svg {
+    animation: icon-slide 520ms var(--ease-out);
+  }
+}
+@keyframes icon-slide {
+  0% { transform: translateX(0); }
+  45% { transform: translateX(140%); }
+  46% { transform: translateX(-140%); }
+  100% { transform: translateX(0); }
+}
+
+.btn--solid {
+  background: var(--c-text);
+  color: var(--c-bg);
+}
+.btn--solid .btn__icon {
+  background: var(--c-bg);
+  color: var(--c-text);
+}
+@media (hover: hover) {
+  .btn--solid:hover {
+    background: var(--c-accent-strong);
+  }
+}
+
+.btn--ghost {
+  background: rgb(17 17 15 / 0.45);
+  color: var(--c-text);
+  border: 1px solid rgb(244 240 231 / 0.22);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+.btn--ghost .btn__icon {
+  border: 1px solid rgb(244 240 231 / 0.22);
+}
+@media (hover: hover) {
+  .btn--ghost:hover {
+    border-color: rgb(244 240 231 / 0.5);
+    background: rgb(17 17 15 / 0.65);
+  }
+}
+
+.btn--line {
+  padding: 0 0.4rem 0 1.1rem;
+  border: 1px solid var(--c-border);
+  color: var(--c-text);
+}
+.btn--line .btn__icon {
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--c-border);
+}
+@media (hover: hover) {
+  .btn--line:hover {
+    border-color: var(--c-text-2);
+  }
+}
+
+.btn[disabled],
+.btn[aria-disabled='true'] {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.magnetic {
+  display: inline-flex;
+  will-change: transform;
+}
+
+/* ---------- Reveal ---------- */
+.line-reveal {
+  display: block;
+}
+.line-reveal__mask {
+  display: block;
+  overflow: hidden;
+  /* margem para descendentes e itálicos não serem cortados */
+  padding: 0.04em 0.06em 0.1em;
+  margin: -0.04em -0.06em -0.1em;
+}
+.line-reveal__line {
+  display: block;
+  transform-origin: 0% 100%;
+  will-change: transform;
+}
+
+.image-reveal {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+.image-reveal__inner,
+.parallax__inner {
+  width: 100%;
+  height: 100%;
+}
+.image-reveal__inner img,
+.parallax__inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.parallax {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+.parallax__inner {
+  will-change: transform;
+}
+
+.scroll-word {
+  display: inline;
+}
+
+/* ---------- Tabs de canto (assinatura dos painéis de imagem) ---------- */
+.corner-tab {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.85rem 0.85rem 0.85rem 1.25rem;
+  background: var(--c-bg);
+  border-top-left-radius: var(--radius);
+}
+/* raios invertidos que costuram a aba ao painel */
+.corner-tab::before,
+.corner-tab::after {
+  content: '';
+  position: absolute;
+  width: var(--radius);
+  height: var(--radius);
+  background: radial-gradient(circle at 0 0, transparent calc(var(--radius) - 0.5px), var(--c-bg) var(--radius));
+}
+.corner-tab::before {
+  right: 0;
+  top: calc(var(--radius) * -1);
+}
+.corner-tab::after {
+  left: calc(var(--radius) * -1);
+  bottom: 0;
+}
+.corner-tab .label {
+  color: var(--c-text);
+}
+.corner-tab__icon {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--c-border);
+  transition:
+    background-color var(--dur) var(--ease-out),
+    color var(--dur) var(--ease-out),
+    border-color var(--dur) var(--ease-out);
+}

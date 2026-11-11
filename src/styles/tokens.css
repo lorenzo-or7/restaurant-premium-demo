@@ -1,0 +1,58 @@
+/*
+ * DESIGN TOKENS — paleta, tipografia, espaçamento e movimento.
+ * Para outro cliente, ajuste as variáveis abaixo.
+ */
+:root {
+  /* Cores */
+  --c-bg: #11110f;
+  --c-bg-2: #1a1916;
+  --c-surface: #24221e;
+  --c-surface-2: #2c2a25;
+  --c-text: #f4f0e7;
+  --c-text-2: #bdb7ac;
+  --c-text-3: #9a948a; /* 6.3:1 sobre --c-bg */
+  --c-accent: #c6a77b;
+  --c-accent-strong: #d8bd93;
+  --c-border: #39362f;
+  --c-border-soft: #2a2823;
+  --c-danger: #e39a86;
+  --c-scrim: rgb(17 17 15 / 0.72);
+
+  /* Tipografia */
+  --f-display: 'Instrument Serif', 'Times New Roman', serif;
+  --f-body: 'Hanken Grotesk Variable', 'Hanken Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --fs-mega: clamp(3.2rem, 1.2rem + 6.4vw, 8.75rem);
+  --fs-hero: clamp(3rem, 0.9rem + 6vw, 8.25rem);
+  --fs-display: clamp(2.6rem, 1.5rem + 4.4vw, 6rem);
+  --fs-h2: clamp(2.1rem, 1.4rem + 2.8vw, 4.2rem);
+  --fs-h3: clamp(1.55rem, 1.25rem + 1.1vw, 2.3rem);
+  --fs-h4: clamp(1.25rem, 1.1rem + 0.5vw, 1.55rem);
+  --fs-lead: clamp(1.15rem, 1rem + 0.55vw, 1.5rem);
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+  --fs-label: 0.75rem;
+
+  --lh-tight: 0.92;
+  --lh-title: 1.02;
+  --lh-body: 1.6;
+  --tracking-label: 0.14em;
+
+  /* Espaço e forma */
+  --gutter: clamp(0.5rem, 0.3rem + 0.8vw, 1rem);
+  --pad: clamp(1.25rem, 0.8rem + 2vw, 3rem);
+  --pad-lg: clamp(2rem, 1rem + 4vw, 6rem);
+  --radius: clamp(12px, 0.6rem + 0.5vw, 18px);
+  --radius-sm: 10px;
+  --radius-pill: 999px;
+  --nav-h: 56px;
+
+  /* Movimento */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 180ms;
+  --dur: 420ms;
+  --dur-slow: 900ms;
+
+  color-scheme: dark;
+}
